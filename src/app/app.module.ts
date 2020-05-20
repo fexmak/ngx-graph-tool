@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatButtonModule} from '@angular/material/button';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatDialogModule} from '@angular/material/dialog';
 import { MainMenuComponent } from './components/main-menu/main-menu.component';
 import { InheritanceToolComponent } from './components/inheritance-tool/inheritance-tool.component';
 import { OrgchartModule } from '@dabeng/ng-orgchart';
@@ -14,6 +15,8 @@ import { NgxGraphModule } from '@swimlane/ngx-graph';
 import { NgxGraphToolComponent } from './components/ngx-graph-tool/ngx-graph-tool.component';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { NgxGraphToolExampleComponent } from './components/ngx-graph-tool-example/ngx-graph-tool-example.component';
+import { NgxGraphDialogComponent } from './components/dialogs/ngx-graph-dialog/ngx-graph-dialog.component';
+import { GeneralPurposeComponent } from './components/general-purpose/general-purpose.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +24,9 @@ import { NgxGraphToolExampleComponent } from './components/ngx-graph-tool-exampl
     MainMenuComponent,
     InheritanceToolComponent,
     NgxGraphToolComponent,
-    NgxGraphToolExampleComponent
+    NgxGraphToolExampleComponent,
+    NgxGraphDialogComponent,
+    GeneralPurposeComponent
   ],
   imports: [
     BrowserModule,
@@ -30,9 +35,13 @@ import { NgxGraphToolExampleComponent } from './components/ngx-graph-tool-exampl
     MatMenuModule,
     MatButtonModule,
     MatToolbarModule,
+    MatDialogModule,
     OrgchartModule,
     NgxGraphModule,
     NgxChartsModule
+  ],
+  entryComponents: [
+    NgxGraphDialogComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
