@@ -6,7 +6,7 @@
   [enableZoom] = "false"
   [draggingEnabled] = "false"
   [panningEnabled] ="false"
-  [view]="[550, 500]"
+  [view]="[650, 500]"
   [links]="links"
   [nodes]="nodes"
  
@@ -38,7 +38,14 @@
 
   <ng-template #nodeTemplate let-node>
     <svg:g class="node" ngx-tooltip [tooltipPlacement]="'top'" [tooltipType]="'tooltip'" [tooltipTitle]="node.desc">
-      <svg:rect
+      <svg:rect *ngIf="node.id == selectedNodeId"
+        [attr.width]="node.dimension.width"
+        [attr.height]="node.dimension.height"
+        [attr.fill]="'rgb(36, 36, 36)'"
+        [attr.stroke]="'red'"
+        [attr.strokeWidth] = "4"
+      />
+      <svg:rect *ngIf="node.id != selectedNodeId"
         [attr.width]="node.dimension.width"
         [attr.height]="node.dimension.height"
         [attr.fill]="'rgb(36, 36, 36)'"
@@ -60,7 +67,7 @@
       <svg:text class="edge-label" text-anchor="middle">
         <textPath
           class="text-path"
-          [attr.href]="'#' + link.id"
+          [attr.href]="'#' + 'link.id'"
           [style.dominant-baseline]="link.dominantBaseline"
           startOffset="50%"
         >
